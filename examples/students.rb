@@ -16,7 +16,8 @@ students = [
   Student.new('Britta Perry', 3.0),
   Student.new('Annie Edison', 4.0),
   Student.new('Troy Barnes', 3.2),
-  Student.new('Abed Nadir', 3.5)
+  Student.new('Abed Nadir', 3.5),
+  Student.new('Shirley Bennett', 3.4)
 ]
 
 puts "STUDENTS", "========"
