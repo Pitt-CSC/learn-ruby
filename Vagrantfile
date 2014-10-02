@@ -4,9 +4,9 @@ echo "Preparing box for development:"
 echo "* Installing system packages"
 {
   apt-get update
-  apt-get -qq install git
-  apt-get -qq install build-essential
-} >/dev/null
+  apt-get -y install git
+  apt-get -y install build-essential
+} >/dev/null 2>&1
 
 echo "* Installing rbenv"
 {
@@ -16,20 +16,20 @@ echo "* Installing rbenv"
   echo 'source /opt/rbenv/completions/rbenv.bash' >> /etc/profile.d/rbenv.sh
   echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh
   source /etc/profile.d/rbenv.sh
-} >/dev/null
+} >/dev/null 2>&1
 
 echo "* Installing ruby-build"
 {
   git clone https://github.com/sstephenson/ruby-build.git /opt/rbenv/plugins/ruby_build
   echo 'export PATH=/opt/rbenv/plugins/ruby_build/bin:$PATH' > /etc/profile.d/ruby_build.sh
   source /etc/profile.d/ruby_build.sh
-} >/dev/null
+} >/dev/null 2>&1
 
 echo "* Installing Ruby 2.1.3"
 {
   sudo -u vagrant -i rbenv install 2.1.3
   sudo -u vagrant -i rbenv global 2.1.3
-}
+} >/dev/null 2>&1
 
 echo "Finished! Your VM is ready for you now."
 EOS
