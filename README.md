@@ -36,7 +36,7 @@ $ vagrant up
 Open a shell in the VM:
 
 ```
-$ vagrant up
+$ vagrant ssh
 ```
 
 In the VM, the `learn-ruby` repository is mounted at `/vagrant`. Change into the `/vagrant` directory:
